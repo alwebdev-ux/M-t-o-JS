@@ -44,12 +44,12 @@ document.addEventListener('DOMContentLoaded', function () {
        
         const weatherCondition = data.weather[0].main.toLowerCase();
         const iconMap = {
-            clear: 'image/clear.png',
-            clouds: 'image/cloud.png',
-            rain: 'image/rain.png',
-            snow: 'image/snow.png',
-            mist: 'image/mist.png',
-            fog: 'image/mist.png'
+            clear: 'clear.png',
+            clouds: 'cloud.png',
+            rain: 'rain.png',
+            snow: 'snow.png',
+            mist: 'mist.png',
+            fog: 'mist.png'
         };
         const currentIcon = iconMap[weatherCondition] || 'image/clear.png';
         document.getElementById('img-top').src = currentIcon;
