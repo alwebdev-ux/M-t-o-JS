@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NOWEATHER</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="contain-left">
+          <h1 class="logo">NOWEATHER</h1>
+          <div class="btn">
+            <button class="btn-nav" id="loaderbtn1">
+              Weather <i class="bx bxl-google-cloud"></i>
+            </button>
+            <button class="btn-nav" id="loaderbtn2">
+              Map <i class="bx bx-map-alt"></i>
+            </button>
+            <button class="btn-nav" id="loaderbtn3">
+              Settings <i class="bx bx-cog"></i>
+            </button>
+          </div>
+        </div>
+        <div class="contain-right">
+          <div class="container">
+            <input id="city-input" class="checkbox" type="checkbox" />
+            <div class="mainbox">
+              <div class="iconContainer">
+                <svg
+                  viewBox="0 0 512 512"
+                  height="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="search_icon"
+                >
+                  <path
+                    d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
+                  ></path>
+                </svg>
+              </div>
+              <input
+                id="search-input"
+                class="search_input"
+                placeholder="Search Your City "
+                type="text"
+              />
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="left">
+        <div class="now">
+          <div class="TXT">
+            <h2 class="City" id="City-input">City</h2>
+            <h1 class="degre" id="degre-top">0°</h1>
+          </div>
+          <div class="yy">
+            <img class="img" src="image/clear.png" id="img-top"/>
+          </div>
+        </div>
+
+        <div class="today">
+          <h4 class="TOD">TODAY'S FORECAST</h4>
+          <div class="flex">
+            <div class="mini-column">
+              <p class="time">12:00 PM</p>
+              <img class="mini-img" src="image/clear.png" id="img12pm" />
+              <h3 class="mini-degre" id="temp12pm">0°</h3>
+            </div>
+            <div class="mini-column">
+              <p class="time">4:00 AM</p>
+              <img class="mini-img" src="image/cloud.png" id="img4am" />
+              <h3 class="mini-degre" id="temp4am">0°</h3>
+            </div>
+            <div class="mini-column">
+              <p class="time">8:00 AM</p>
+              <img class="mini-img" src="image/mist.png" id="img8am" />
+              <h3 class="mini-degre" id="temp8am">0°</h3>
+            </div>
+            <div class="mini-column">
+              <p class="time">12:00 AM</p>
+              <img class="mini-img" src="image/clear.png" id="img12am" />
+              <h3 class="mini-degre" id="temp12am">0°</h3>
+            </div>
+            <div class="mini-column">
+              <p class="time">4:00 PM</p>
+              <img class="mini-img" src="image/snow.png" id="img4pm" />
+              <h3 class="mini-degre" id="temp4pm">0°</h3>
+            </div>
+            <div class="mini-column">
+              <p class="time">8:00 PM</p>
+              <img class="mini-img" src="image/rain.png" id="img8pm" />
+              <h3 class="mini-degre" id="temp8pm">0°</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="Air-Today">
+          <h4 class="Air">AIR CONDITIONS</h4>
+          <div class="contain-column">
+            <div class="column">
+              <h3 class="RR"><i class="bx bxs-thermometer"></i> Real Feel</h3>
+              <h2 id="reelfeel">0°</h2>
+            </div>
+            <div class="column">
+              <h3 class="RR">
+                <i class="bx bxs-cloud-rain"></i> Chance of Rain
+              </h3>
+              <h2 id="chanceofrain">0%</h2>
+            </div>
+            <div class="column">
+              <h3 class="RR"><i class="bx bx-wind"></i> Wind</h3>
+              <h2 id="wind-speed">0 Km/h</h2>
+            </div>
+            <div class="column">
+              <h3 class="RR"><i class="bx bxs-hot"></i> UV Index</h3>
+              <h2 id="UV-INDEX">0</h2>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="right">
+        <h4 class="TRE">WEEK'S FORECAST</h4>
+        <div class="contain-week-column">
+          <div class="week-column">
+            <div class="start"><p class="nom-du-jour" id="day-today">Today</p></div>
+            <div class="middle">
+              <img class="right-img" src="image/clear.png" id="icon-today" alt="" />
+              <h4 class="detail" id="desc-today">Sunny</h4>
+            </div>
+            <div class="end"><p class="date" id="date-today">12/08</p></div>
+          </div>
+
+          <div class="week-column">
+            <div class="start"><p class="nom-du-jour" id="day-tuesday">Tuesday</p></div>
+            <div class="middle">
+              <img class="right-img" src="image/clear.png" id="icon-tuesday" alt="" />
+              <h4 class="detail" id="desc-tuesday">Sunny</h4>
+            </div>
+            <div class="end"><p class="date" id="date-tuesday">13/08</p></div>
+          </div>
+
+          <div class="week-column">
+            <div class="start"><p class="nom-du-jour" id="day-wednesday">Wednesday</p></div>
+            <div class="middle">
+              <img class="right-img" src="image/clear.png" id="icon-wednesday" alt="" />
+              <h4 class="detail" id="desc-wednesday">Sunny</h4>
+            </div>
+            <div class="end"><p class="date" id="date-wednesday">14/08</p></div>
+          </div>
+
+          <div class="week-column">
+            <div class="start"><p class="nom-du-jour" id="day-thursday">Thursday</p></div>
+            <div class="middle">
+              <img class="right-img" src="image/clear.png" id="icon-thursday" alt="" />
+              <h4 class="detail" id="desc-thursday">Sunny</h4>
+            </div>
+            <div class="end"><p class="date" id="date-thursday">15/08</p></div>
+          </div>
+
+          <div class="week-column">
+            <div class="start"><p class="nom-du-jour" id="day-friday">Friday</p></div>
+            <div class="middle">
+              <img class="right-img" src="image/cloud.png" id="icon-friday" alt="" />
+              <h4 class="detail" id="desc-friday">Cloudy</h4>
+            </div>
+            <div class="end"><p class="date" id="date-friday">16/08</p></div>
+          </div>
+
+          <div class="week-column">
+            <div class="start"><p class="nom-du-jour" id="day-saturday">Saturday</p></div>
+            <div class="middle">
+              <img class="right-img" src="image/clear.png" id="icon-saturday" alt="" />
+              <h4 class="detail" id="desc-saturday">Sunny</h4>
+            </div>
+            <div class="end"><p class="date" id="date-saturday">17/08</p></div>
+          </div>
+
+          <div class="week-column">
+            <div class="start"><p class="nom-du-jour" id="day-sunday">Sunday</p></div>
+            <div class="middle">
+              <img class="right-img" src="image/rain.png" id="icon-sunday" alt="" />
+              <h4 class="detail" id="desc-sunday">Rainy</h4>
+            </div>
+            <div class="end"><p class="date" id="date-sunday">18/08</p></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="background">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </body>
+</html>
